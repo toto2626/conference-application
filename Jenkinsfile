@@ -54,7 +54,7 @@ pipeline {
             steps{
                 sh 'docker ps -f name=conference-uat -q | xargs --no-run-if-empty docker container stop'
                 sh 'docker container ls -a -fname=conference-uat -q | xargs -r docker container rm'
-                sh 'docker run -d --name conference-uat -p 8190:8080 conference-project'
+                sh 'docker run -d --name conference-uat -p 8590:8080 conference-project'
             }
         }
 
