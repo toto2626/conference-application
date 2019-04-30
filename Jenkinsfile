@@ -30,6 +30,20 @@ pipeline {
                          }
                     }
             }
+
         }
+        stage('Publish in Nexus') {
+            steps {
+                nexusPublisher nexusInstanceId: 'Nexus',
+                nexusRepositoryId: 'releases',
+                packages: [[$class: 'MavenPackage',
+                mavenAssetList: [[classifier: '', extension: '', filePath: 'target/conference-app-3.0.0.war']], mavenCoordinate: [artifactId: 'de.codecentric', groupId: 'conference-app', packaging: 'war', version: NEXUS_ARTIFACT_VERSION]]]
+            }
+        }
+
+
+
+
+
     }
 }
