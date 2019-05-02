@@ -21,7 +21,7 @@ pipeline {
                         steps{
                             // Run the maven build with checkstyle
                             sh "mvn clean  -Dmaven.test.skip=true package checkstyle:checkstyle"
-                            //echo "failed to be checked"
+
                          }
                      }
                     stage('Sonarqube') {
