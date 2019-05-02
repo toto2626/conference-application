@@ -1,6 +1,6 @@
 ## Quickstart
 
-Prerequisites:
+Prerequistes:
 
 ```
 # MySQL 
